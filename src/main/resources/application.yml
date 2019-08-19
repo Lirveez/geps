@@ -1,0 +1,27 @@
+server:
+  port: 11040
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://94.177.189.97:5432/geps
+    username: geps
+    password: geps
+  jpa:
+    properties:
+      hibernate:
+        temp.use_jdbc_metadata_defaults: false
+        enable_lazy_load_no_trans: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+logbook:
+  format.style: json
+  exclude:
+    - /actuator/health
+    - /v2/api-docs
+    - /swagger-ui.html
+    - /admin/**
+    - /webjars/**
+    - /swagger-resources/**
+logging:
+  level:
+    ROOT: INFO
+    org.zalando.logbook.Logbook: TRACE
